@@ -172,11 +172,12 @@ function archiveParFile() {
     # Archivage des fichier .par et .v9r
     parfile=$1
     v9rfile="${parfile%.par}.v9r"
-    archive_path="${ARCH_DIR_PATH}/${DATENOW}"
+    latest_dir=$(find "${ARCH_DIR_PATH}" -maxdepth 1 -type d -regextype posix-extended -regex ".*/[0-9]{8}$" | \
+      awk -F/ '{print $NF}' | \
+      awk -v now="${DATENOW}" '$1 <= now' | \
+      sort -r | head -n1)
 
-    if ! mkdir -p "${archive_path}" 2>> "${LOG_FILE}"; then
-        traceLog "[ERROR] FAILED to create directory ${archive_path}"
-    fi
+    archive_path="${ARCH_DIR_PATH}/${latest_dir}"
 
     mv -f "${parfile}" "${archive_path}" 2>> "${LOG_FILE}"
     if [ -f "${archive_path}/$(basename "${parfile}")" ]; then
