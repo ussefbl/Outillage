@@ -54,7 +54,7 @@ def _mk_yyyymmdd_dir(base: Path, yyyymmdd: str):
 
 
 def _reload_module():
-    import distribustion_par_webdav as m
+    import distribution_par_webdav as m
     importlib.reload(m)
     return m
 
@@ -72,7 +72,7 @@ def mod(tmp_path):
     m.param_mode_copie = ""          # non full
     m.MODE_COPY_PAR = "CLEVA"        # tu dis que tu le gères "en dur" par domaine
     m.param_interface_path = str(tmp_path / "interfaces") + "/"
-    m.param_webdav_path = str(tmp_path / "webdav") + "/"
+    m.param_webdav_path = str(tmp_path / "webdav" / "tech") + "/"
     m.param_logshell_path = ""       # pas utilisé ici
     m.param_log_verbose = "INFO"
 
@@ -83,7 +83,6 @@ def mod(tmp_path):
     m.CLEVA_DATA_HOME = m.param_interface_path
     m.DSN_DATA_HOME = m.param_interface_path
     m.WEBDAV_HOME = m.param_webdav_path
-
     return m
 
 
