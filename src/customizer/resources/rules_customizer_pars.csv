@@ -1,0 +1,5 @@
+RULES_NUM;RULE_ACTIVE;BATCH_CODE;MODE;KEY;VALUE;COMMENTAIRE
+;;;;;;
+R001;true;DSN-ANALYSECHANGEMENT;  NEW;moisPrincipalDeclare;DATE_MOIS_PRECEDENT;Definir et ajouter la cle moisPrincipalDeclare
+R002;true;DSN-EXPORTCOTISATION;   NEW;moisPrincipalDeclare;DATE_MOIS_PRECEDENT;Definir et ajouter la cle moisPrincipalDeclare
+R003;true;DSN-EXPORTPAIEMENT;     NEW;moisPrincipalDeclare;DATE_MOIS_PRECEDENT;Definir et ajouter la cle moisPrincipalDeclare

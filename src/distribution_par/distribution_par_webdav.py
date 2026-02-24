@@ -203,7 +203,7 @@ def logger_path_generation() -> None:
         this_program_log_path = standard_unix_logpath
     else:
         log_before_logger('Init: Logshell_path usage du standard [./]')
-        this_program_log_path = './'  ### current working directory
+        this_program_log_path = '../'  ### current working directory
 # =============================================================================
 def startLogger():
     global logger
